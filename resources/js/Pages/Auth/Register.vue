@@ -23,46 +23,46 @@ const submit = () => {
 
 <template>
 	<GuestLayout>
-		<Head title="Register" />
+		<Head title="REGISTRATE" />
 
 		<div class="flex flex-col overflow-y-auto md:flex-row">
-			<div class="h-20 md:h-auto md:w-1/2">
+			<div class="h-32 md:h-auto md:w-1/2">
 				<img aria-hidden="true" class="object-cover w-full h-full" src="/images/logo.jpg" alt="Office" />
 			</div>
 
 			<div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
 				<div class="w-full">
-					<h1 class="mb-4 text-xl font-semibold text-gray-700">
+					<h1 class="mb-4 text-xl font-semibold text-white">
 						CREAR CUENTA
 					</h1>
 
 					<form @submit.prevent="submit">
 						<div>
-							<InputLabel for="name" value="NOMBRE" />
+							<InputLabel for="name" value="NOMBRE" class="text-white" />
 							<TextInput id="name" type="text" class="block w-full mt-1" v-model="form.name" required autofocus autocomplete="name" />
 							<InputError class="mt-2" :message="form.errors.name" />
 						</div>
 
 						<div class="mt-4">
-							<InputLabel for="email" value="EMAIL" />
+							<InputLabel for="email" value="EMAIL"  class="text-white"/>
 							<TextInput id="email" type="email" class="block w-full mt-1" v-model="form.email" required autocomplete="username" />
 							<InputError class="mt-2" :message="form.errors.email" />
 						</div>
 
 						<div class="mt-4">
-							<InputLabel for="password" value="PASSWORD" />
+							<InputLabel for="password" value="PASSWORD" class="text-white" />
 							<TextInput id="password" type="password" class="block w-full mt-1" v-model="form.password" required autocomplete="new-password" />
 							<InputError class="mt-2" :message="form.errors.password" />
 						</div>
 
 						<div class="mt-4">
-							<InputLabel for="password_confirmation" value="CONFIRM PASSSWORD" />
+							<InputLabel for="password_confirmation" value="CONFIRM PASSSWORD"  class="text-white"/>
 							<TextInput id="password_confirmation" type="password" class="block w-full mt-1" v-model="form.password_confirmation" required autocomplete="new-password" />
 							<InputError class="mt-2" :message="form.errors.password_confirmation" />
 						</div>
 
 						<div class="flex items-center justify-end mt-4">
-							<Link :href="route('login')" class="text-sm text-gray-600 underline  hover:text-gray-900">
+							<Link :href="route('login')" class="text-sm text-white underline  hover:text-gray-900">
 								Estas Registrado?
 							</Link>
 

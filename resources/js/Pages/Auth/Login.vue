@@ -31,9 +31,9 @@ const submit = () => {
 
 <template>
 	<GuestLayout>
-		<Head title="Log in" />
+		<Head title="ENTRAR" />
 
-		<div class="flex flex-col overflow-y-auto md:flex-row ">
+		<div class="flex flex-col overflow-y-auto md:flex-row">
 			<div class="h-32 md:h-auto md:w-1/2">
 				<img aria-hidden="true" class="object-cover w-full h-full" src="/images/logo.jpg" alt="Office" />
 			</div>
@@ -47,14 +47,12 @@ const submit = () => {
 
 					<form @submit.prevent="submit">
 						<div class="mt-4">
-							<!-- Añadir clase text-white para el color blanco del texto -->
 							<InputLabel for="email" value="Email" class="text-white" />
 							<TextInput id="email" type="email" class="block w-full mt-1" v-model="form.email" required autofocus autocomplete="username" />
 							<InputError class="mt-2" :message="form.errors.email" />
 						</div>
 
 						<div class="mt-4">
-							<!-- Añadir clase text-white para el color blanco del texto -->
 							<InputLabel for="password" value="Password" class="text-white" />
 							<TextInput id="password" type="password" class="block w-full mt-1" v-model="form.password" required autocomplete="current-password" />
 							<InputError class="mt-2" :message="form.errors.password" />
@@ -70,6 +68,10 @@ const submit = () => {
 						<div class="flex items-center justify-end mt-4">
 							<Link v-if="canResetPassword" :href="route('password.request')" class="text-sm text-white underline hover:text-gray-900">
 								Olvidastes Tu Contraseña?
+							</Link>
+
+							<Link href="/register" class="text-sm text-white underline hover:text-gray-900 ml-4">
+								¿No tienes una cuenta? Regístrate
 							</Link>
 
 							<PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
